@@ -1,0 +1,15 @@
+public class Pagamento {
+    private double valor;
+    private double saldo;
+    private boolean suspeito;
+
+    public Pagamento(double valor, double saldo, boolean suspeito) {
+        this.valor = valor;
+        this.saldo = saldo;
+        this.suspeito = suspeito;
+    }
+
+    public double getValor() { return valor; }
+    public double getSaldo() { return saldo; }
+    public boolean isSuspeito() { return suspeito; }
+}
