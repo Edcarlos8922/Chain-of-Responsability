@@ -1,0 +1,11 @@
+ublic class VerificaSaldoHandler extends PagamentoHandler {
+    @Override
+    public void processar(Pagamento pagamento) {
+        if (pagamento.getSaldo() >= pagamento.getValor()) {
+            System.out.println("✅ Saldo suficiente. Prosseguindo...");
+            if (proximo != null) proximo.processar(pagamento);
+        } else {
+            System.out.println("❌ Saldo insuficiente. Pagamento negado.");
+        }
+    }
+}
