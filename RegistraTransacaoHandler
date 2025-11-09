@@ -1,0 +1,6 @@
+public class RegistraTransacaoHandler extends PagamentoHandler {
+    @Override
+    public void processar(Pagamento pagamento) {
+        System.out.println("💾 Transação registrada com sucesso!");
+    }
+}
