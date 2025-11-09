@@ -1,0 +1,11 @@
+public class VerificaFraudeHandler extends PagamentoHandler {
+    @Override
+    public void processar(Pagamento pagamento) {
+        if (!pagamento.isSuspeito()) {
+            System.out.println("✅ Nenhum indício de fraude. Prosseguindo...");
+            if (proximo != null) proximo.processar(pagamento);
+        } else {
+            System.out.println("⚠️ Pagamento suspeito! Encaminhado para revisão.");
+        }
+    }
+}
