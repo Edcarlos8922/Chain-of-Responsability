@@ -1,0 +1,22 @@
+public class Main {
+    public static void main(String[] args) {
+        PagamentoHandler saldo = new VerificaSaldoHandler();
+        PagamentoHandler fraude = new VerificaFraudeHandler();
+        PagamentoHandler registro = new RegistraTransacaoHandler();
+
+        saldo.setProximo(fraude);
+        fraude.setProximo(registro);
+
+        Pagamento p1 = new Pagamento(100, 500, false);
+        System.out.println("\n--- Pagamento 1 ---");
+        saldo.processar(p1);
+
+        Pagamento p2 = new Pagamento(100, 500, true);
+        System.out.println("\n--- Pagamento 2 ---");
+        saldo.processar(p2);
+
+        Pagamento p3 = new Pagamento(1000, 200, false);
+        System.out.println("\n--- Pagamento 3 ---");
+        saldo.processar(p3);
+    }
+}
